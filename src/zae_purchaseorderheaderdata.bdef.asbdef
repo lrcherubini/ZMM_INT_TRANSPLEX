@@ -1,0 +1,15 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+
+define behavior for ZAE_PurchaseOrderHeaderData //alias <alias_name>
+{
+  field ( suppress ) PurchaseOrder;
+  association _PurchaseOrderItem;
+}
+
+define behavior for ZAE_PurchaseOrderItemData //alias <alias_name>
+{
+
+  association _PurchaseOrder;
+}

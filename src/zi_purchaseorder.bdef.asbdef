@@ -1,0 +1,30 @@
+managed with unmanaged save implementation in class zbp_i_purchaseorder unique;
+strict ( 2 );
+
+define behavior for ZI_PurchaseOrder
+
+lock master
+authorization master ( instance )
+
+{
+  field( readonly ) PurchaseOrder;
+  create;
+  association _PurchaseOrderItem { create; }
+
+  validation validatePO on save { create; update; }
+
+  // Static Action to create a purchase order (potentially return order) via BAPI using payload
+  static action createReturnOrderViaBapi deep parameter ZAE_PurchaseOrderHeaderData
+                                         result [1] $self;
+}
+
+define behavior for ZI_PurchaseOrderItem //alias <alias_name>
+
+lock dependent by _PurchaseOrder
+authorization dependent by _PurchaseOrder
+
+{
+  internal update;
+  field ( readonly ) PurchaseOrder, PurchaseOrderItem;
+  association _PurchaseOrder;
+}

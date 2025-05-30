@@ -1,0 +1,5 @@
+@EndUserText.label: 'Transplex Integration'
+define service ZAPI_TRANSPLEX {
+  expose ZA_PurchaseOrder     as A_PurchaseOrder;
+  expose ZA_PurchaseOrderItem as A_PurchaseOrderItem;
+}
