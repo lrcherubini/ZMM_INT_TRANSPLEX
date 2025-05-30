@@ -17,4 +17,13 @@ INTERFACE zif_wrap_bapi_po_create
       et_items     TYPE tp_items
       et_result    TYPE tp_result.
 
+  METHODS create_bo
+    IMPORTING
+      is_haeder    TYPE tp_header
+      it_items     TYPE tp_items
+    EXPORTING
+      es_expheader TYPE tp_expheader
+      et_items     TYPE tp_items
+      et_result    TYPE tp_result.
+
 ENDINTERFACE.

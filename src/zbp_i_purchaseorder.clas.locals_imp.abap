@@ -251,7 +251,7 @@ CLASS lsc_zi_purchaseorder IMPLEMENTATION.
         ENDIF.
 
         " Chamar o método create da interface para criar o pedido de compra
-        CALL METHOD lo_bapi_po_create->create
+        CALL METHOD lo_bapi_po_create->create_bo
           EXPORTING
             is_haeder    = ls_header
             it_items     = lt_items
