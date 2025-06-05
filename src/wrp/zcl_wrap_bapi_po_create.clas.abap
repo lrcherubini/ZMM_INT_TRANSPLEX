@@ -25,7 +25,7 @@ CLASS zcl_wrap_bapi_po_create IMPLEMENTATION.
 
     CALL METHOD zcl_ba_util=>set_bapi_x
       EXPORTING
-        is_bapi  = is_haeder
+        is_bapi  = is_header
 *       it_blanks    =
 *       it_constants =
       IMPORTING
@@ -48,7 +48,7 @@ CLASS zcl_wrap_bapi_po_create IMPLEMENTATION.
 
     zcl_wrap_bapi_po_create_async=>bapi_po_create(
       EXPORTING
-        i_poheader     = is_haeder
+        i_poheader     = is_header
         i_poheaderx    = ls_headerx
         i_no_authority = 'X'
       IMPORTING
@@ -71,7 +71,7 @@ CLASS zcl_wrap_bapi_po_create IMPLEMENTATION.
 
     CALL METHOD zcl_ba_util=>set_bapi_x
       EXPORTING
-        is_bapi  = is_haeder
+        is_bapi  = is_header
 *       it_blanks    =
 *       it_constants =
       IMPORTING
@@ -94,7 +94,7 @@ CLASS zcl_wrap_bapi_po_create IMPLEMENTATION.
 
     CALL FUNCTION 'BAPI_PO_CREATE1'
       EXPORTING
-        poheader     = is_haeder
+        poheader     = is_header
         poheaderx    = ls_headerx
         no_authority = 'X'
 *       poaddrvendor =
