@@ -10,7 +10,7 @@ INTERFACE zif_wrap_bapi_po_create
 
   METHODS create
     IMPORTING
-      is_haeder    TYPE tp_header
+      is_header    TYPE tp_header
       it_items     TYPE tp_items
     EXPORTING
       es_expheader TYPE tp_expheader
@@ -19,7 +19,7 @@ INTERFACE zif_wrap_bapi_po_create
 
   METHODS create_bo
     IMPORTING
-      is_haeder    TYPE tp_header
+      is_header    TYPE tp_header
       it_items     TYPE tp_items
     EXPORTING
       es_expheader TYPE tp_expheader
